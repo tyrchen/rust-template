@@ -1,0 +1,6 @@
+syntax = "proto3";
+package abi;
+
+option swift_prefix="Abi";
+
+// common data structure shared by all

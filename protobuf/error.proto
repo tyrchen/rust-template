@@ -1,0 +1,26 @@
+syntax = "proto3";
+package abi;
+
+option swift_prefix="Abi";
+
+// all error related data structure
+
+// Application error definition
+message AppError {
+    // Error code, shall be 1:1 mapping with `error` crate
+    AppErrorCode code = 1;
+
+    // Error message
+    string message = 2;
+}
+
+// error code
+enum AppErrorCode {
+    Ok = 0;
+    UnsupportedApi = 1;
+    MalformedApiResponse = 2;
+
+    // converted errors
+    ProstDecodeError = 200;
+    ProstEncodeError = 201;
+}
