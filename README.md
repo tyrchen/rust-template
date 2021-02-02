@@ -1,10 +1,14 @@
 ![](https://github.com/tyrchen/rust-template/workflows/build/badge.svg)
 
-# Rust-template
+# {{ project-name }}
 
 description about the crate
 
 ## How to use it
+
+```bash
+$ cargo generate --git https://github.com/tyrchen/rust-template
+```
 
 Have fun with this crate!
 
