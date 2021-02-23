@@ -3,7 +3,6 @@
 members = [
     "abi",
     "assets",
-    "errors",
     "macros",
     "network",
     "utils",

@@ -10,6 +10,5 @@ edition = "2018"
 mockito = "0.29"
 
 abi = { path = "../abi" }
-errors = { path = "../errors" }
 fixtures = { path = "../fixtures" }
 utils = { path = "../utils" }

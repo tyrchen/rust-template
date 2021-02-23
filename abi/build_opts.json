@@ -17,10 +17,10 @@
             "description": "serde support for message",
             "attr": "#[derive(serde::Serialize, serde::Deserialize)]\n#[serde(default)]",
             "paths": [
-                "abi.AppError",
-                "abi.RequestPing",
-                "abi.ResponsePong",
-                "abi.Pong"
+                "AppError",
+                "RequestPing",
+                "ResponsePong",
+                "Pong"
             ]
         },
         {

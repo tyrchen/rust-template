@@ -8,7 +8,6 @@ edition = "2018"
 
 [dependencies]
 abi = { path = "../abi" }
-errors = { path = "../errors" }
 utils = { path = "../utils" }
 
 [dev-dependencies]
