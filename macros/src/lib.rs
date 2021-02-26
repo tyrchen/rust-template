@@ -19,12 +19,12 @@ macro_rules! response_new {
 }
 
 #[macro_export]
-macro_rules! respone_into_result {
+macro_rules! respone_to_result {
     ($type:ty, $subtype:ty) => {
-        impl IntoResult for $type {
+        impl ToResult for $type {
             type Msg = $subtype;
 
-            fn into_result(&self) -> Result<&Self::Msg, MyError> {
+            fn to_result(&self) -> Result<&Self::Msg, MyError> {
                 if let Some(v) = self.data.as_ref() {
                     Ok(v)
                 } else {
@@ -36,10 +36,10 @@ macro_rules! respone_into_result {
 }
 
 #[macro_export]
-macro_rules! result_into_vec {
+macro_rules! result_to_vec {
     ($type:ty, $subtype:ty) => {
-        impl IntoVec for Result<$subtype, AppError> {
-            fn into_vec(&self) -> Vec<u8> {
+        impl ToVec for Result<$subtype, AppError> {
+            fn to_vec(&self) -> Vec<u8> {
                 match self {
                     Ok(v) => <$type>::new(None, Some(v.to_owned())).into(),
                     Err(e) => <$type>::new(Some(e.to_owned()), None).into(),

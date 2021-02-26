@@ -1,7 +1,7 @@
 use thiserror::Error;
 
-use abi::*;
-use macros::{respone_into_result, result_into_vec};
+use crate::*;
+use macros::{respone_to_result, result_to_vec};
 
 /// General error definition for the project
 ///
@@ -53,19 +53,19 @@ fn get_code(e: &MyError) -> AppErrorCode {
 }
 
 /// convert protobuf type ResponseMsg into a Result<&Msg, &MyError>
-pub trait IntoResult {
+pub trait ToResult {
     /// internal type for the ResponseMsg
     type Msg;
 
     /// extract Msg or AppError to Result
-    fn into_result(&self) -> Result<&Self::Msg, MyError>;
+    fn to_result(&self) -> Result<&Self::Msg, MyError>;
 }
 
 /// Convert Result<Msg, MyError> into protobuf bytes
-pub trait IntoVec {
+pub trait ToVec {
     /// generate protobuf bytes based on Result
-    fn into_vec(&self) -> Vec<u8>;
+    fn to_vec(&self) -> Vec<u8>;
 }
 
-respone_into_result!(ResponsePong, Pong);
-result_into_vec!(ResponsePong, Pong);
+respone_to_result!(ResponsePong, Pong);
+result_to_vec!(ResponsePong, Pong);
