@@ -1,9 +1,9 @@
 syntax = "proto3";
 package abi;
 
-option swift_prefix="Abi";
+import "protobuf/error.proto";
 
-import "error.proto";
+option swift_prefix = "Abi";
 
 // All API related data structure
 // For Response, we shall define it with two fields, AppError and T, so that
@@ -11,15 +11,15 @@ import "error.proto";
 
 // request ping
 message RequestPing {
-    string msg = 1;
+  string msg = 1;
 }
 
 // pong
 message ResponsePong {
-    AppError error = 1;
-    Pong data = 2;
+  AppError error = 1;
+  Pong data = 2;
 }
 
 message Pong {
-    string msg = 1;
+  string msg = 1;
 }

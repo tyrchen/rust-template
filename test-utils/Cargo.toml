@@ -7,7 +7,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-mockito = "0.29"
+mockito = "1.2"
 
 abi = { path = "../abi" }
 fixtures = { path = "../fixtures" }

@@ -1,4 +1,4 @@
 syntax = "proto3";
 package abi;
 
-option swift_prefix="Abi";
+option swift_prefix = "Abi";
